@@ -29,7 +29,7 @@ class MainActivity : BaseActivity() {
     lateinit var text: String
 
     @Inject
-    lateinit var train: Map<String, Train>
+    lateinit var train: Map<String, @JvmSuppressWildcards Train>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
