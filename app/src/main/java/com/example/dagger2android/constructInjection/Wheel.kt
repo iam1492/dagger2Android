@@ -1,4 +1,4 @@
-package com.example.dagger2android.injectfirst
+package com.example.dagger2android.constructInjection
 
 import javax.inject.Inject
 

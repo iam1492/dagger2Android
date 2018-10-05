@@ -4,9 +4,10 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
-import com.example.dagger2android.bindinterface.MainPresenter
+import com.example.dagger2android.bindinterface.CarPresenter
 import com.example.dagger2android.contextmodule.ClassWithContext
-import com.example.dagger2android.injectfirst.Car
+import com.example.dagger2android.constructInjection.Car
+import com.example.dagger2android.multibinding.CarType
 import com.example.dagger2android.multibinding.Train
 import com.example.dagger2android.qualifier.DocType
 import com.google.android.material.snackbar.Snackbar
@@ -22,14 +23,14 @@ class MainActivity : BaseActivity() {
     lateinit var classWithContext: ClassWithContext
 
     @Inject
-    lateinit var mainPresenter: MainPresenter
+    lateinit var carPresenter: CarPresenter
 
     @Inject
     @field:DocType("html")
     lateinit var text: String
 
     @Inject
-    lateinit var train: Map<String, @JvmSuppressWildcards Train>
+    lateinit var train: Map<CarType, @JvmSuppressWildcards Train>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +38,7 @@ class MainActivity : BaseActivity() {
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, mainPresenter.requestHello(), Snackbar.LENGTH_LONG)
+            Snackbar.make(view, carPresenter.requestHelloVendor(), Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
 
@@ -47,7 +48,7 @@ class MainActivity : BaseActivity() {
 
         findViewById<TextView>(R.id.text3).text = text
 
-        findViewById<TextView>(R.id.text4).text = train["flyingTrain"]?.go()
+        findViewById<TextView>(R.id.text4).text = train[CarType.FLYING]?.go()
 
     }
 

@@ -1,4 +1,4 @@
-package com.example.dagger2android
+package com.example.dagger2android.qualifier
 
 import javax.inject.Scope
 

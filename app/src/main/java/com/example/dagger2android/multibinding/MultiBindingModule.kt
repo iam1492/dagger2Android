@@ -9,17 +9,17 @@ abstract class MultiBindingModule {
 
     @Binds
     @IntoMap
-    @CarKey("superTrain")
+    @CarKey(CarType.SUPER)
     abstract fun bindSuperTrain(train: SuperTrain): Train
 
     @Binds
     @IntoMap
-    @CarKey("flyingTrain")
+    @CarKey(CarType.FLYING)
     abstract fun bindFlyingTrain(train: FlyingTrain): Train
 
     @Binds
     @IntoMap
-    @CarKey("toyTrain")
+    @CarKey(CarType.TOY)
     abstract fun bindToyTrain(train: ToyTrain): Train
 
 }

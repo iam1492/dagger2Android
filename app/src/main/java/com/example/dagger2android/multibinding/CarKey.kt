@@ -8,4 +8,4 @@ import dagger.MapKey
 )
 @Retention(AnnotationRetention.RUNTIME)
 @MapKey
-annotation class CarKey(val value: String)
+annotation class CarKey(val value: CarType)

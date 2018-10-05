@@ -5,5 +5,5 @@ import javax.inject.Singleton
 
 @Singleton
 class FakeApi @Inject constructor() {
-    fun requestHello() = "hello"
+    fun requestVendor() = "vendor name"
 }

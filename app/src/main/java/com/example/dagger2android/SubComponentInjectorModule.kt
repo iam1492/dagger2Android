@@ -4,6 +4,7 @@ import com.example.dagger2android.bindinterface.MainModule
 import com.example.dagger2android.qualifier.SubModule
 import com.example.dagger2android.contextmodule.ClassWithContextModule
 import com.example.dagger2android.multibinding.MultiBindingModule
+import com.example.dagger2android.qualifier.PerActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

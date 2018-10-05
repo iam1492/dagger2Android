@@ -1,6 +1,5 @@
 package com.example.dagger2android.qualifier
 
-import com.example.dagger2android.PerActivity
 import dagger.Module
 import dagger.Provides
 
